@@ -5,12 +5,11 @@ import NotFound from '../pages/NotFoundPage.vue'
 // Admin pages
 import Overview from 'src/pages/Overview.vue'
 import UserProfile from 'src/pages/UserProfile.vue'
-import TableList from 'src/pages/TableList.vue'
+import DataInput from 'src/pages/DataInput.vue'
 import Typography from 'src/pages/Typography.vue'
 import Icons from 'src/pages/Icons.vue'
-import Maps from 'src/pages/Maps.vue'
 import Notifications from 'src/pages/Notifications.vue'
-import Upgrade from 'src/pages/Upgrade.vue'
+import Results from "@/pages/Results.vue";
 
 const routes = [
   {
@@ -34,9 +33,9 @@ const routes = [
         component: UserProfile
       },
       {
-        path: 'table-list',
-        name: 'Table List',
-        component: TableList
+        path: 'input-data',
+        name: 'InputData',
+        component: DataInput
       },
       {
         path: 'typography',
@@ -49,20 +48,16 @@ const routes = [
         component: Icons
       },
       {
-        path: 'maps',
-        name: 'Maps',
-        component: Maps
-      },
-      {
         path: 'notifications',
         name: 'Notifications',
         component: Notifications
       },
       {
-        path: 'upgrade',
-        name: 'Upgrade to PRO',
-        component: Upgrade
-      }
+        path: 'results',
+        name: 'Results',
+        component: Results
+      },
+
     ]
   },
   { path: '*', component: NotFound }

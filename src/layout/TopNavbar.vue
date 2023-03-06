@@ -24,13 +24,10 @@
             <template slot="title">
               <i class="nc-icon nc-planet"></i>
               <b class="caret"></b>
-              <span class="notification">5</span>
+              <span class="notification">2</span>
             </template>
-            <a class="dropdown-item" href="#">Notification 1</a>
+            <a class="dropdown-item" href="#">Add your daily mood</a>
             <a class="dropdown-item" href="#">Notification 2</a>
-            <a class="dropdown-item" href="#">Notification 3</a>
-            <a class="dropdown-item" href="#">Notification 4</a>
-            <a class="dropdown-item" href="#">Another notification</a>
           </base-dropdown>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -45,15 +42,6 @@
               Account
             </a>
           </li>
-          <base-dropdown title="Dropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something</a>
-            <div class="divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </base-dropdown>
           <li class="nav-item">
             <a href="#" class="nav-link">
               Log out

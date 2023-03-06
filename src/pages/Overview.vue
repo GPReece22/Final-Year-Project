@@ -61,22 +61,22 @@
             </div>
           </stats-card>
         </div>
-
       </div>
+
       <div class="row">
         <div class="col-md-8">
           <chart-card :chart-data="lineChart.data"
                       :chart-options="lineChart.options"
                       :responsive-options="lineChart.responsiveOptions">
             <template slot="header">
-              <h4 class="card-title">Users Behavior</h4>
-              <p class="card-category">24 Hours performance</p>
+              <h4 class="card-title">Quick overview</h4>
+              <p class="card-category">7 days</p>
             </template>
             <template slot="footer">
               <div class="legend">
-                <i class="fa fa-circle text-info"></i> Open
-                <i class="fa fa-circle text-danger"></i> Click
-                <i class="fa fa-circle text-warning"></i> Click Second Time
+                <i class="fa fa-circle text-info"></i> Mood
+                <i class="fa fa-circle text-danger"></i> Sleep
+                <i class="fa fa-circle text-warning"></i> Exercise
               </div>
               <hr>
               <div class="stats">
@@ -192,16 +192,16 @@
         },
         lineChart: {
           data: {
-            labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
+            labels: ['07/02', '08/02', '09/02', '10/02', '11/02', '12/02', '13/02'],
             series: [
-              [287, 385, 490, 492, 554, 586, 698, 695],
-              [67, 152, 143, 240, 287, 335, 435, 437],
-              [23, 113, 67, 108, 190, 239, 307, 308]
+              [20, 13, 21, 45, 45, 62, 21],
+              [43, 54, 32, 45, 32, 45, 65],
+              [12, 13, 14, 34, 45, 32, 9]
             ]
           },
           options: {
             low: 0,
-            high: 800,
+            high: 75,
             showArea: false,
             height: '245px',
             axisX: {
