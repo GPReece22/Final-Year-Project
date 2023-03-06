@@ -1,225 +1,75 @@
 <template>
   <div class="content">
     <div class="container-fluid">
-      <card>
-        <div class="row">
-          <div class="col-md-6">
-            <h5>Notifications Style</h5>
-            <div class="alert alert-info">
-              <span>This is a plain notification</span>
-            </div>
-            <div class="alert alert-info">
-              <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
-                <i class="nc-icon nc-simple-remove"></i>
-              </button>
-              <span>This is a notification with close button.</span>
-            </div>
-            <div class="alert alert-info alert-with-icon" data-notify="container">
-              <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
-                <i class="nc-icon nc-simple-remove"></i>
-              </button>
-              <span data-notify="icon" class="nc-icon nc-app"></span>
-              <span data-notify="message">This is a notification with close button and icon.</span>
-            </div>
-            <div class="alert alert-info alert-with-icon" data-notify="container">
-              <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
-                <i class="nc-icon nc-simple-remove"></i>
-              </button>
-              <span data-notify="icon" class="nc-icon nc-app"></span>
-              <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <h5>Notification states</h5>
-            <div class="alert alert-info">
-              <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
-                <i class="nc-icon nc-simple-remove"></i>
-              </button>
-              <span><b> Info - </b> This is a regular notification made with ".alert-info"</span>
-            </div>
-            <div class="alert alert-success">
-              <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
-                <i class="nc-icon nc-simple-remove"></i>
-              </button>
-              <span><b> Success - </b> This is a regular notification made with ".alert-success"</span>
-            </div>
-            <div class="alert alert-warning">
-              <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
-                <i class="nc-icon nc-simple-remove"></i>
-              </button>
-              <span><b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-            </div>
-            <div class="alert alert-danger">
-              <button type="button" aria-hidden="true" class="close" data-dismiss="alert">
-                <i class="nc-icon nc-simple-remove"></i>
-              </button>
-              <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <div class="places-buttons">
-          <div class="row justify-content-center">
-            <div class="col-6 text-center">
-              <h5>Notifications Places
-                <p class="category">Click to view notifications</p>
-              </h5>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-md-3 col-md-offset-1">
-              <button class="btn btn-default btn-block" @click="notifyVue('top', 'left')">Top Left</button>
-            </div>
-            <div class="col-md-3">
-              <button class="btn btn-default btn-block" @click="notifyVue('top', 'center')">Top Center</button>
-            </div>
-            <div class="col-md-3">
-              <button class="btn btn-default btn-block" @click="notifyVue('top', 'right')">Top Right</button>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-md-3 col-md-offset-1">
-              <button class="btn btn-default btn-block" @click="notifyVue('bottom', 'left')">Bottom Left</button>
-            </div>
-            <div class="col-md-3">
-              <button class="btn btn-default btn-block" @click="notifyVue('bottom', 'center')">Bottom Center</button>
-            </div>
-            <div class="col-md-3">
-              <button class="btn btn-default btn-block" @click="notifyVue('bottom', 'right')">Bottom Right</button>
-            </div>
-
-          </div>
-        </div>
-      </card>
-
-
       <div class="row">
-        <div class="col-12">
-          <card class="strpied-tabled-with-hover"
-                body-classes="table-full-width table-responsive"
-          >
+        <div class="col">
+          <chart-card :chart-data="lineChart.data"
+                      :chart-options="lineChart.options"
+                      :responsive-options="lineChart.responsiveOptions">
             <template slot="header">
-              <h4 class="card-title">Striped Table with Hover</h4>
-              <p class="card-category">Here is a subtitle for this table</p>
+              <h4 class="card-title">Quick overview</h4>
+              <p class="card-category">7 days</p>
             </template>
-            <l-table class="table-hover table-striped"
-                     :columns="table1.columns"
-                     :data="table1.data">
-            </l-table>
-          </card>
-
-        </div>
-
-        <div class="col-12">
-          <card class="card-plain">
-            <template slot="header">
-              <h4 class="card-title">Table on Plain Background</h4>
-              <p class="card-category">Here is a subtitle for this table</p>
+            <template slot="footer">
+              <div class="legend">
+                <i class="fa fa-circle text-info"></i> Mood
+                <i class="fa fa-circle text-danger"></i> Sleep
+                <i class="fa fa-circle text-warning"></i> Exercise
+                <i class="fa fa-circle text-primary"></i> Option 3
+              </div>
+              <hr>
+              <div class="stats">
+                <i class="fa fa-history"></i> Updated 3 minutes ago
+              </div>
             </template>
-            <div class="table-responsive">
-              <l-table class="table-hover"
-                       :columns="table2.columns"
-                       :data="table2.data">
-              </l-table>
-            </div>
-          </card>
-        </div>
-
-        <div class="col-12">
-          <card class="strpied-tabled-with-hover"
-                body-classes="table-full-width table-responsive"
-          >
-            <template slot="header">
-              <h4 class="card-title">Small table</h4>
-              <p class="card-category">Here is a subtitle for this table</p>
-            </template>
-            <l-table class="table-hover table-striped table-sm"
-                     :columns="table1.columns"
-                     :data="table1.data">
-            </l-table>
-          </card>
+          </chart-card>
         </div>
       </div>
-
-
+      <div class="row justify-content-center">
+        <div class="col-md-3 col-md-offset-1">
+          <button class="btn-outline-danger btn-block" @click="notifyVue('top', 'left')">Sleep</button>
+        </div>
+        <div class="col-md-3">
+          <button class="btn-outline-warning btn-block" @click="notifyVue('top', 'left')">Exercise</button>
+        </div>
+        <div class="col-md-3">
+          <button class="btn-outline-primary btn-block" @click="notifyVue('top', 'left')">Option 3</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
   import LTable from 'src/components/Table.vue'
   import Card from 'src/components/Cards/Card.vue'
-  const tableColumns = ['Id', 'Name', 'Salary', 'Country', 'City']
-  const tableData = [{
-    id: 1,
-    name: 'Dakota Rice',
-    salary: '$36.738',
-    country: 'Niger',
-    city: 'Oud-Turnhout'
-  },
-    {
-      id: 2,
-      name: 'Minerva Hooper',
-      salary: '$23,789',
-      country: 'Curaçao',
-      city: 'Sinaai-Waas'
-    },
-    {
-      id: 3,
-      name: 'Sage Rodriguez',
-      salary: '$56,142',
-      country: 'Netherlands',
-      city: 'Baileux'
-    },
-    {
-      id: 4,
-      name: 'Philip Chaney',
-      salary: '$38,735',
-      country: 'Korea, South',
-      city: 'Overland Park'
-    },
-    {
-      id: 5,
-      name: 'Doris Greene',
-      salary: '$63,542',
-      country: 'Malawi',
-      city: 'Feldkirchen in Kärnten'
-    }]
+  import ChartCard from 'src/components/Cards/ChartCard.vue'
+  import StatsCard from 'src/components/Cards/StatsCard.vue'
 
   export default {
     components: {
       LTable,
-      Card
+      Card,
+      ChartCard,
+      StatsCard
     },
 
     data() {
       return {
-        type: ['', 'info', 'success', 'warning', 'danger'],
-        notifications: {
-          topCenter: false
-        },
-        table1: {
-          columns: [...tableColumns],
-          data: [...tableData]
-        },
-        table2: {
-          columns: [...tableColumns],
-          data: [...tableData]
+        lineChart: {
+          data: {
+            labels: ['07/02', '08/02', '09/02', '10/02', '11/02', '12/02', '13/02'],
+            series: [
+              [20, 13, 21, 45, 45, 62, 21],
+              [43, 54, 32, 45, 32, 45, 65],
+              [12, 13, 14, 34, 45, 32, 9],
+              [22, 43, 16, 54, 15, 52, 19]
+            ]
+          }
         }
       }
     },
+
     methods: {
-      notifyVue(verticalAlign, horizontalAlign) {
-        const color = Math.floor((Math.random() * 4) + 1)
-        this.$notifications.notify(
-          {
-            message: `<span>Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer.</span>`,
-            icon: 'nc-icon nc-app',
-            horizontalAlign: horizontalAlign,
-            verticalAlign: verticalAlign,
-            type: this.type[color]
-          })
-      }
     }
   }
 
