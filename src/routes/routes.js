@@ -33,7 +33,7 @@ const routes = [
       },
       {
         path: 'input-data',
-        name: 'Input Data',
+        name: 'InputData',
         component: DataInput
       },
       {

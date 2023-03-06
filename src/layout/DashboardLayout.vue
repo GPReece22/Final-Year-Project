@@ -10,8 +10,7 @@
         <i class="nc-icon nc-circle-09"></i>
         <p>My Profile</p>
       </sidebar-link>
-      <sidebar-link to="/admin/input-data
-">
+      <sidebar-link to="/admin/input-data">
         <i class="nc-icon nc-notes"></i>
         <p>Input Data</p>
       </sidebar-link>

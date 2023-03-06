@@ -3,19 +3,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <card class="strpied-tabled-with-hover"
-                body-classes="table-full-width table-responsive"
-          >
-            <template slot="header">
-              <h4 class="card-title">Striped Table with Hover</h4>
-              <p class="card-category">Here is a subtitle for this table</p>
-            </template>
-            <l-table class="table-hover table-striped"
-                     :columns="table1.columns"
-                     :data="table1.data">
-            </l-table>
-          </card>
-
+          <input-mood-form>
+          </input-mood-form>
         </div>
 
         <div class="col-12">
@@ -46,9 +35,7 @@
                      :data="table1.data">
             </l-table>
           </card>
-
         </div>
-
       </div>
     </div>
   </div>
@@ -56,6 +43,7 @@
 <script>
   import LTable from 'src/components/Table.vue'
   import Card from 'src/components/Cards/Card.vue'
+  import InputMoodForm from './DataInput/InputMoodForm.vue'
   const tableColumns = ['Id', 'Name', 'Salary', 'Country', 'City']
   const tableData = [{
     id: 1,
@@ -95,7 +83,8 @@
   export default {
     components: {
       LTable,
-      Card
+      Card,
+      InputMoodForm
     },
     data () {
       return {
