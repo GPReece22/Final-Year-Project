@@ -14,9 +14,13 @@
         <i class="nc-icon nc-notes"></i>
         <p>Input Data</p>
       </sidebar-link>
-      <sidebar-link to="/admin/notifications">
+      <sidebar-link to="/admin/results">
         <i class="nc-icon nc-chart-bar-32"></i>
         <p> View Results</p>
+      </sidebar-link>
+      <sidebar-link to="/admin/notifications">
+        <i class="nc-icon nc-watch-time"></i>
+        <p>Link To Smart Devices</p>
       </sidebar-link>
       <sidebar-link to="/admin/typography">
         <i class="nc-icon nc-paper-2"></i>

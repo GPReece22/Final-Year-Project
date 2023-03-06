@@ -9,6 +9,7 @@ import DataInput from 'src/pages/DataInput.vue'
 import Typography from 'src/pages/Typography.vue'
 import Icons from 'src/pages/Icons.vue'
 import Notifications from 'src/pages/Notifications.vue'
+import Results from "@/pages/Results.vue";
 
 const routes = [
   {
@@ -50,7 +51,13 @@ const routes = [
         path: 'notifications',
         name: 'Notifications',
         component: Notifications
-      }
+      },
+      {
+        path: 'results',
+        name: 'Results',
+        component: Results
+      },
+
     ]
   },
   { path: '*', component: NotFound }
