@@ -3,8 +3,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <input-mood-form>
-          </input-mood-form>
+          <mood-form>
+          </mood-form>
+          <exercise-form>
+          </exercise-form>
         </div>
 
         <div class="col-12">
@@ -43,7 +45,9 @@
 <script>
   import LTable from 'src/components/Table.vue'
   import Card from 'src/components/Cards/Card.vue'
-  import InputMoodForm from './DataInput/InputMoodForm.vue'
+  import MoodForm from './DataInput/MoodForm.vue'
+  import ExerciseForm from "@/pages/DataInput/ExerciseForm.vue";
+
   const tableColumns = ['Id', 'Name', 'Salary', 'Country', 'City']
   const tableData = [{
     id: 1,
@@ -84,7 +88,8 @@
     components: {
       LTable,
       Card,
-      InputMoodForm
+      MoodForm,
+      ExerciseForm
     },
     data () {
       return {
