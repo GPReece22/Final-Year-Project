@@ -30,7 +30,8 @@
     "@vue/cli-service": "3.12.1",
     "sass": "1.56.2",
     "sass-loader": "10.1.1",
-    "vue-template-compiler": "2.7.14"
+    "vue-template-compiler": "2.7.14",
+    "webpack": "4.40.2"
   },
   "browserslist": [
     "> 1%",
